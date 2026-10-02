@@ -1,0 +1,10 @@
+.git
+assets/reference
+private
+build
+dist
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out

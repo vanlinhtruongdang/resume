@@ -1,0 +1,68 @@
+\usepackage[a4paper,top=1.35cm,bottom=1.15cm,left=1.7cm,right=1.7cm]{geometry}
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\definecolor{ink}{gray}{0}
+\definecolor{muted}{gray}{0.38}
+\definecolor{accent}{gray}{0}
+
+\setmainfont{Kanit-ExtraLight.ttf}[
+  Path=assets/fonts/,
+  BoldFont=Kanit-Medium.ttf,
+  ItalicFont=Kanit-ExtraLightItalic.ttf,
+  BoldItalicFont=Kanit-Medium.ttf
+]
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{0.5em}
+\pagestyle{empty}
+\hypersetup{colorlinks=true,urlcolor=black}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\resumeName}[1]{{\fontsize{29}{34}\selectfont\bfseries\color{ink} #1}}
+\newcommand{\resumeRole}[1]{{\large\bfseries\color{accent} #1}}
+\newcommand{\sectionTitle}[1]{%
+  \vspace{0.62em}%
+  {\Large\bfseries\color{ink} #1}\par
+  \vspace{0.34em}{\color{accent}\hrule}\vspace{0.75em}%
+}
+\newcommand{\entryHeader}[3]{%
+  {\large\bfseries\color{ink} #1}\hfill {\itshape\color{muted}#3}\par
+  {\normalsize\bfseries\color{muted}#2}\par
+  \vspace{0.28em}%
+}
+\newcommand{\publication}[2]{%
+  {\normalsize\bfseries\color{ink} #1}\par
+  {\normalsize\bfseries\color{muted}#2}\par
+  \vspace{0.65em}%
+}
+\newcommand{\twoLineEntry}[4]{%
+  {\renewcommand{\arraystretch}{0.86}%
+    \begin{tabularx}{\textwidth}{@{}Y>{\raggedleft\arraybackslash}p{0.27\textwidth}@{}}
+      {\large\bfseries\color{ink} #1} & {\itshape\color{muted}#3} \\
+      {\normalsize\bfseries\color{muted}#2} & {\itshape\color{muted}#4}
+    \end{tabularx}\par}%
+  \vspace{0.36em}%
+}
+\newcommand{\credentialEntry}[3]{%
+  {\renewcommand{\arraystretch}{0.82}%
+    \begin{tabularx}{\textwidth}{@{}Y>{\raggedleft\arraybackslash}p{0.27\textwidth}@{}}
+      {\large\bfseries\color{ink} #1} & {\itshape\color{muted}#3} \\
+      {\normalsize\bfseries\color{muted}#2} & {}
+    \end{tabularx}\par}%
+  \vspace{0.18em}%
+}
+\newcommand{\skillGroup}[2]{%
+  {\normalsize\bfseries\color{ink} #1}\par
+  {\small #2}\par\vspace{0.9em}%
+}
+\newenvironment{resumeBullets}{%
+  \begin{itemize}[leftmargin=1.05em,itemsep=0.28em,topsep=0.06em,parsep=0pt,partopsep=0pt]
+}{\end{itemize}\vspace{0.36em}}
